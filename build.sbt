@@ -12,7 +12,7 @@ val sprayJson                = "io.spray"                %% "spray-json"        
 // test dependencies
 val akkaTestkit              = "com.typesafe.akka"       %% "akka-testkit"                  % akkaVersion
 val sprayTestkit             = "io.spray"                %% "spray-testkit"                 % sprayVersion
-val scalatest                = "org.scalatest"           %% "scalatest"                     % "2.2.4"
+val scalatest                = "org.scalatest"           %% "scalatest"                     % "2.2.4" % "test"
 
 name := """wehkamp-akka-typed"""
 
@@ -23,9 +23,10 @@ scalaVersion := "2.11.6"
 mainClass in Compile := Some("App")
 
 libraryDependencies ++= Seq(
-  	akkaActor,
+	akkaActor,
 	sprayCan,
 	sprayRouting,
 	sprayJson,
-	akkaTyped
+	akkaTyped,
+	scalatest
 )

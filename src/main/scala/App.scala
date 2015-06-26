@@ -51,7 +51,7 @@ object Behaviours {
       }
     }
   }
-  
+
 	def shopperBehaviour(sessions: Map[SessionId, Session])(implicit ckHandler: CheckoutHandler): Behavior[SessionCommand] = ContextAware { ctx =>
 		Total {
 			case CloseSession(id) => {
